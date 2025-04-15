@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Amd\\UrlShortener\\UrlShortener\\UrlShortener.csproj": {}
+    "D:\\Amd\\UrlShortener\\urlshortener\\UrlShortener.csproj": {}
   },
   "projects": {
-    "D:\\Amd\\UrlShortener\\UrlShortener\\UrlShortener.csproj": {
+    "D:\\Amd\\UrlShortener\\urlshortener\\UrlShortener.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Amd\\UrlShortener\\UrlShortener\\UrlShortener.csproj",
+        "projectUniqueName": "D:\\Amd\\UrlShortener\\urlshortener\\UrlShortener.csproj",
         "projectName": "UrlShortener",
-        "projectPath": "D:\\Amd\\UrlShortener\\UrlShortener\\UrlShortener.csproj",
+        "projectPath": "D:\\Amd\\UrlShortener\\urlshortener\\UrlShortener.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Amd\\UrlShortener\\UrlShortener\\obj\\",
+        "outputPath": "D:\\Amd\\UrlShortener\\urlshortener\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

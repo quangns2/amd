@@ -1,0 +1,112 @@
+/* App.css */
+
+/* Cấu trúc chung */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('/public/images/background.jpg'); /* Đường dẫn đến ảnh nền */
+  background-size: cover; /* Tự động điều chỉnh kích thước ảnh sao cho phù hợp */
+  background-position: center; /* Canh giữa ảnh nền */
+  background-repeat: no-repeat; /* Ngừng lặp lại ảnh nền */
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Thẻ chứa giao diện */
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 2;
+}
+
+/* Tiêu đề */
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form nhập URL */
+.url-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.url-input:focus {
+  border-color: #007bff;
+}
+
+/* Nút tạo URL rút gọn */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn:disabled {
+  background-color: #ddd;
+}
+
+/* Kết quả hiển thị URL rút gọn */
+.result {
+  margin-top: 20px;
+}
+
+.result a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.result a:hover {
+  text-decoration: underline;
+}
+
+/* Thông báo lỗi */
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.copy-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background-color: #218838;
+}

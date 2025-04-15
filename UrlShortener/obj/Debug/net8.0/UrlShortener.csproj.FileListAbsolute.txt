@@ -340,3 +340,7 @@ D:\Amd\UrlShortener\UrlShortener\obj\Debug\net8.0\ref\UrlShortener.dll
 D:\Amd\UrlShortener\UrlShortener\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
 D:\Amd\UrlShortener\UrlShortener\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\Amd\UrlShortener\UrlShortener\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\Amd\UrlShortener\urlshortener\obj\Debug\net8.0\UrlShortener.sourcelink.json
+D:\Amd\UrlShortener\urlshortener\bin\Debug\net8.0\urlshortener-fontend\package-lock.json
+D:\Amd\UrlShortener\urlshortener\bin\Debug\net8.0\urlshortener-fontend\package.json
+D:\Amd\UrlShortener\urlshortener\bin\Debug\net8.0\urlshortener-fontend\public\manifest.json

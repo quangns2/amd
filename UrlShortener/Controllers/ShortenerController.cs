@@ -17,7 +17,7 @@ namespace UrlShortener.Controllers
         }
 
         // POST: api/shortener
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<IActionResult> ShortenUrl([FromBody] string originalUrl)
         {
             if (string.IsNullOrWhiteSpace(originalUrl))

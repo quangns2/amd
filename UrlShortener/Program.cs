@@ -14,17 +14,24 @@ namespace UrlShortener
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // Thêm CORS vào builder.Services
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+            });
+
             var app = builder.Build();
 
-            app.UseCors(policy =>
-                policy.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-            );
+            // Cấu hình CORS để áp dụng middleware cho mọi yêu cầu
+            app.UseCors("AllowAll");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -37,9 +44,10 @@ namespace UrlShortener
 
             app.UseAuthorization();
 
-
+            // Map Controllers (API endpoints)
             app.MapControllers();
-            
+
+            // Map the redirect logic for short URLs
             app.MapGet("/{shortCode}", async (string shortCode, AppDbContext dbContext) =>
             {
                 var shortUrl = await dbContext.ShortUrls.FirstOrDefaultAsync(s => s.ShortCode == shortCode);
@@ -51,7 +59,6 @@ namespace UrlShortener
 
                 return Results.Redirect(shortUrl.OriginalUrl);
             });
-
 
             app.Run();
         }
