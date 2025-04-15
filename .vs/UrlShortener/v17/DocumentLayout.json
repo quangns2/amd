@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Amd\\UrlShortener\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|d:\\amd\\urlshortener\\urlshortener\\urlshortener.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\urlshortener.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|d:\\amd\\urlshortener\\urlshortener\\models\\shorturl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\models\\shorturl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|d:\\amd\\urlshortener\\urlshortener\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|d:\\amd\\urlshortener\\urlshortener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|d:\\amd\\urlshortener\\urlshortener\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|d:\\amd\\urlshortener\\urlshortener\\controllers\\shortenercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\controllers\\shortenercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|d:\\amd\\urlshortener\\urlshortener\\urlshortener.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{FE577CB0-1B79-442B-BBF5-C62E86EDC61E}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\urlshortener.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UrlShortener.http",
+              "DocumentMoniker": "D:\\Amd\\UrlShortener\\UrlShortener\\UrlShortener.http",
+              "RelativeDocumentMoniker": "UrlShortener\\UrlShortener.http",
+              "ToolTip": "D:\\Amd\\UrlShortener\\UrlShortener\\UrlShortener.http",
+              "RelativeToolTip": "UrlShortener\\UrlShortener.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-03-18T06:54:57.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShortenerController.cs",
+              "DocumentMoniker": "D:\\Amd\\UrlShortener\\UrlShortener\\Controllers\\ShortenerController.cs",
+              "RelativeDocumentMoniker": "UrlShortener\\Controllers\\ShortenerController.cs",
+              "ToolTip": "D:\\Amd\\UrlShortener\\UrlShortener\\Controllers\\ShortenerController.cs",
+              "RelativeToolTip": "UrlShortener\\Controllers\\ShortenerController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T11:56:34.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Amd\\UrlShortener\\UrlShortener\\Program.cs",
+              "RelativeDocumentMoniker": "UrlShortener\\Program.cs",
+              "ToolTip": "D:\\Amd\\UrlShortener\\UrlShortener\\Program.cs",
+              "RelativeToolTip": "UrlShortener\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T11:48:18.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Amd\\UrlShortener\\UrlShortener\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "UrlShortener\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\Amd\\UrlShortener\\UrlShortener\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "UrlShortener\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T11:47:31.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShortUrl.cs",
+              "DocumentMoniker": "D:\\Amd\\UrlShortener\\UrlShortener\\Models\\ShortUrl.cs",
+              "RelativeDocumentMoniker": "UrlShortener\\Models\\ShortUrl.cs",
+              "ToolTip": "D:\\Amd\\UrlShortener\\UrlShortener\\Models\\ShortUrl.cs",
+              "RelativeToolTip": "UrlShortener\\Models\\ShortUrl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T11:46:24.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UrlShortener.csproj",
+              "DocumentMoniker": "D:\\Amd\\UrlShortener\\UrlShortener\\UrlShortener.csproj",
+              "RelativeDocumentMoniker": "UrlShortener\\UrlShortener.csproj",
+              "ToolTip": "D:\\Amd\\UrlShortener\\UrlShortener\\UrlShortener.csproj",
+              "RelativeToolTip": "UrlShortener\\UrlShortener.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-10T11:46:02.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Amd\\UrlShortener\\UrlShortener\\appsettings.json",
+              "RelativeDocumentMoniker": "UrlShortener\\appsettings.json",
+              "ToolTip": "D:\\Amd\\UrlShortener\\UrlShortener\\appsettings.json",
+              "RelativeToolTip": "UrlShortener\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-10T11:18:39.032Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
