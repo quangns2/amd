@@ -55,7 +55,7 @@ namespace UrlShortener
 
                 if (shortUrl == null)
                 {
-                    return Results.NotFound("Short URL không tồn tại.");
+                    return Results.NotFound("Short URL does not exist.");
                 }
 
                 return Results.Redirect(shortUrl.OriginalUrl);

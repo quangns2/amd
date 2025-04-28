@@ -21,7 +21,7 @@ namespace UrlShortener.Controllers
         public async Task<IActionResult> ShortenUrl([FromBody] string originalUrl)
         {
             if (string.IsNullOrWhiteSpace(originalUrl))
-                return BadRequest("URL không hợp lệ.");
+                return BadRequest("Invalid URL.");
 
             var shortCode = GenerateShortCode();
             var shortUrl = new ShortUrl { OriginalUrl = originalUrl, ShortCode = shortCode };
@@ -44,7 +44,7 @@ namespace UrlShortener.Controllers
             var shortUrl = _context.ShortUrls.FirstOrDefault(s => s.ShortCode == shortCode);
 
             if (shortUrl == null)
-                return NotFound("Short URL không tồn tại.");
+                return NotFound("Short URL does not exist.");
 
             return Redirect(shortUrl.OriginalUrl);
         }

@@ -29,7 +29,7 @@ function App() {
       }
     } catch (err) {
       console.error("Error:", err);
-      setError('Lỗi khi tạo URL rút gọn');
+      setError('Error creating shortened URL');
     }
 
     setLoading(false);
@@ -48,13 +48,13 @@ function App() {
           type="text"
           value={originalUrl}
           onChange={(e) => setOriginalUrl(e.target.value)}
-          placeholder="Nhập URL cần rút gọn"
+          placeholder="Enter the URL to shorten"
           className="url-input"
         />
         
         {/* Nút gửi yêu cầu tạo URL rút gọn */}
         <button onClick={createShortUrl} disabled={loading} className="submit-btn">
-          {loading ? 'Đang xử lý...' : 'Tạo URL Rút Gọn'}
+          {loading ? 'Processing...' : 'Create Short URL'}
         </button>
 
         {/* Hiển thị thông báo lỗi */}
@@ -63,10 +63,10 @@ function App() {
         {/* Hiển thị kết quả URL rút gọn */}
         {shortenedUrl && (
           <div className="result">
-            <p>URL Rút Gọn: 
+            <p>Short URL: 
               <a href={shortenedUrl} target="_blank" rel="noopener noreferrer">{shortenedUrl}</a>
             </p>
-            <button onClick={copyToClipboard} className="copy-btn">Sao chép</button>
+            <button onClick={copyToClipboard} className="copy-btn">Copy To Clipboard</button>
           </div>
         )}
       </div>
