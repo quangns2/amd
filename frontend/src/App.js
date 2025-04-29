@@ -8,12 +8,15 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [history, setHistory] = useState([]);
+  const [recordCount, setRecordCount] = useState(0);
+
   
   // Gọi API để lấy lịch sử
   const fetchHistory = async () => {
     try {
       const response = await axios.get('http://localhost:5113/gateway/api/Shortener/get-all');
       setHistory(response.data);
+      setRecordCount(response.data.length);
     } catch (err) {
       console.error('Error fetching history:', err);
     }
@@ -63,6 +66,7 @@ function App() {
       await axios.delete(`http://localhost:5113/gateway/api/Shortener/delete/${id}`);
       setHistory((prevHistory) => prevHistory.filter((item) => item.id !== id));
       alert('URL deleted successfully!');
+      fetchHistory();
     } catch (err) {
       console.error('Error deleting URL:', err);
       alert('Failed to delete URL. Please try again.');
@@ -103,30 +107,45 @@ function App() {
           </div>
         )}
 
-        {/* Lịch sử */}
+        {/* Lịch sử dạng bảng */}
         <div className="history-box">
           <h2>History</h2>
+          <p>Total records: {recordCount}</p>
           {history.length > 0 ? (
-            <ul>
-              {history.map((item) => (
-                <li key={item.id}>
-                  <p>
-                    Original: <a href={item.originalUrl} target="_blank" rel="noopener noreferrer">{item.originalUrl}</a>
-                  </p>
-                  <p>
-                    Shortened:
-                    <a
-                      href={`http://localhost:5112/${item.shortCode}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      http://localhost:5112/{item.shortCode}
-                    </a>
-                  </p>
-                  <button onClick={() => deleteShortUrl(item.id)} className="delete-btn">Delete</button>
-                </li>
-              ))}
-            </ul>
+            <table className="history-table">
+              <thead>
+                <tr>
+                  <th>Original URL</th>
+                  <th>Shortened URL</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {history.map((item) => (
+                  <tr key={item.id}>
+                    <td>
+                      <a href={item.originalUrl} target="_blank" rel="noopener noreferrer">
+                        {item.originalUrl}
+                      </a>
+                    </td>
+                    <td>
+                      <a
+                        href={`http://localhost:5112/${item.shortCode}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        http://localhost:5112/{item.shortCode}
+                      </a>
+                    </td>
+                    <td>
+                      <button onClick={() => deleteShortUrl(item.id)} className="delete-btn">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           ) : (
             <p>No history available.</p>
           )}
