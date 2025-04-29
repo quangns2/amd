@@ -41,14 +41,15 @@ h1 {
 
 /* Form nhập URL */
 .url-input {
-  width: 100%;
-  padding: 15px;
+  width: calc(100% - 20px); /* Đảm bảo input không bị tràn */
+  padding: 12px 15px; /* Điều chỉnh padding để cân đối hơn */
   font-size: 16px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px; /* Căn giữa và thêm khoảng cách dưới */
   border: 1px solid #ddd;
   border-radius: 4px;
   outline: none;
   transition: border-color 0.3s;
+  box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
 }
 
 .url-input:focus {
@@ -109,4 +110,52 @@ h1 {
 
 .copy-btn:hover {
   background-color: #218838;
+}
+
+.history-box {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-height: 300px; /* Giới hạn chiều cao */
+  overflow-y: auto; /* Thêm thanh cuộn nếu nội dung quá dài */
+}
+
+.history-box h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.history-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.history-box li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.history-box li p {
+  margin: 5px 0;
+}
+
+.history-box li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.history-box li a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
 }

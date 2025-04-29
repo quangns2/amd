@@ -22,9 +22,9 @@ namespace UrlShortener
             {
                 options.AddDefaultPolicy(policy =>
                 {
-                    policy.AllowAnyOrigin()
-                          .AllowAnyMethod()
-                          .AllowAnyHeader();
+                    policy.AllowAnyOrigin() // Cho phép mọi domain
+                        .AllowAnyMethod() // Cho phép mọi phương thức (GET, POST, DELETE, v.v.)
+                        .AllowAnyHeader(); // Cho phép mọi header
                 });
             });
             

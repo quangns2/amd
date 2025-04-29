@@ -2,6 +2,7 @@
 using UrlShortener.Data;
 using UrlShortener.Models;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace UrlShortener.Controllers
 {
@@ -35,6 +36,27 @@ namespace UrlShortener.Controllers
             return Ok(new { shortUrl = $"{baseUrl}/{shortCode}" });
         }
 
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> DeleteShortUrl(int id)
+        {
+            var shortUrl = await _context.ShortUrls.FindAsync(id);
+            if (shortUrl == null)
+            {
+                return NotFound("Short URL not found.");
+            }
+
+            _context.ShortUrls.Remove(shortUrl);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Short URL deleted successfully." });
+        }
+
+        [HttpGet("get-all")]
+        public async Task<IActionResult> GetAllShortUrls()
+        {
+            var urls = await _context.ShortUrls.ToListAsync();
+            return Ok(urls);
+        }
 
         
         [Route("{shortCode}")]

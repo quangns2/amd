@@ -1,31 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css'; // Đảm bảo bạn đã tạo file CSS
+import './App.css';
 
 function App() {
   const [originalUrl, setOriginalUrl] = useState('');
   const [shortenedUrl, setShortenedUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [history, setHistory] = useState([]);
 
-  // Hàm gửi yêu cầu POST để tạo URL rút gọn
+  // Gọi API để lấy lịch sử
+  const fetchHistory = async () => {
+    try {
+      const response = await axios.get('http://localhost:5113/gateway/api/Shortener/get-all');
+      setHistory(response.data);
+    } catch (err) {
+      console.error('Error fetching history:', err);
+    }
+  };
+
+  useEffect(() => {
+    fetchHistory();
+  }, []);
+
+  // Gửi yêu cầu rút gọn URL
   const createShortUrl = async () => {
     if (!originalUrl) return;
+    if (!originalUrl.startsWith('https://')) {
+      setError('URL must start with "https://".');
+      return;
+    }
 
     setLoading(true);
     setError('');
 
     try {
-      // Gửi yêu cầu POST với URL cần rút gọn
-      const response = await axios.post('http://localhost:5113/gateway/api/Shortener/create', originalUrl, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await axios.post(
+        'http://localhost:5113/gateway/api/Shortener/create',
+        originalUrl,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
-      // Xử lý kết quả trả về
       if (response.data.shortUrl) {
-        setShortenedUrl(response.data.shortUrl); // Lưu URL rút gọn
+        setShortenedUrl(response.data.shortUrl);
+        fetchHistory(); // Cập nhật lại lịch sử
       }
     } catch (err) {
       console.error("Error:", err);
@@ -34,6 +56,18 @@ function App() {
 
     setLoading(false);
   };
+
+  // Hàm xóa URL
+  const deleteShortUrl = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5113/gateway/api/Shortener/delete/${id}`);
+      setHistory((prevHistory) => prevHistory.filter((item) => item.id !== id));
+    } catch (err) {
+      console.error('Error deleting URL:', err);
+    }
+  };
+
+  // Copy
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shortenedUrl);
   };
@@ -42,8 +76,8 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>URL Shortener</h1>
-        
-        {/* Input cho URL gốc */}
+
+        {/* Input URL */}
         <input
           type="text"
           value={originalUrl}
@@ -51,26 +85,53 @@ function App() {
           placeholder="Enter the URL to shorten"
           className="url-input"
         />
-        
-        {/* Nút gửi yêu cầu tạo URL rút gọn */}
+
         <button onClick={createShortUrl} disabled={loading} className="submit-btn">
           {loading ? 'Processing...' : 'Create Short URL'}
         </button>
 
-        {/* Hiển thị thông báo lỗi */}
         {error && <p className="error-message">{error}</p>}
 
-        {/* Hiển thị kết quả URL rút gọn */}
         {shortenedUrl && (
           <div className="result">
-            <p>Short URL: 
+            <p>Short URL:
               <a href={shortenedUrl} target="_blank" rel="noopener noreferrer">{shortenedUrl}</a>
             </p>
             <button onClick={copyToClipboard} className="copy-btn">Copy To Clipboard</button>
           </div>
         )}
+
+        {/* Lịch sử */}
+        <div className="history-box">
+          <h2>History</h2>
+          {history.length > 0 ? (
+            <ul>
+              {history.map((item) => (
+                <li key={item.id}>
+                  <p>
+                    Original: <a href={item.originalUrl} target="_blank" rel="noopener noreferrer">{item.originalUrl}</a>
+                  </p>
+                  <p>
+                    Shortened:
+                    <a
+                      href={`http://localhost:5112/${item.shortCode}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      http://localhost:5112/{item.shortCode}
+                    </a>
+                  </p>
+                  <button onClick={() => deleteShortUrl(item.id)} className="delete-btn">Delete</button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No history available.</p>
+          )}
+        </div>
       </div>
     </div>
   );
 }
+
 export default App;
