@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [history, setHistory] = useState([]);
-
+  
   // Gọi API để lấy lịch sử
   const fetchHistory = async () => {
     try {
@@ -62,8 +62,10 @@ function App() {
     try {
       await axios.delete(`http://localhost:5113/gateway/api/Shortener/delete/${id}`);
       setHistory((prevHistory) => prevHistory.filter((item) => item.id !== id));
+      alert('URL deleted successfully!');
     } catch (err) {
       console.error('Error deleting URL:', err);
+      alert('Failed to delete URL. Please try again.');
     }
   };
 
